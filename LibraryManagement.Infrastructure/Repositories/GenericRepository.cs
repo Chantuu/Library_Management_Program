@@ -2,10 +2,10 @@
 
 namespace LibraryManagement.Infrastructure.Repositories;
 
-public class GenericRepository<T> : IRepository<T>, IDisposable
+public abstract class GenericRepository<T> : IRepository<T>, IDisposable
 where T : class
 {
-    readonly LibraryContext _context;
+    protected readonly LibraryContext _context;
     
     public GenericRepository()
     {
