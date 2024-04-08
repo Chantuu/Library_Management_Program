@@ -21,5 +21,13 @@
             Console.ForegroundColor = ConsoleColor.White;
             return result;
         }
+
+        public static void DisplayErrorMessage(string message)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{message}");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }
