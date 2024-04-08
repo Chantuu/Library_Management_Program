@@ -29,5 +29,30 @@
             Console.WriteLine($"{message}");
             Console.ForegroundColor = ConsoleColor.White;
         }
+
+        public static void ChooseNextMenu(string result, Action callerMethod, params Action[] menus)
+        {
+            int choice;
+
+            if (int.TryParse(result, out choice) == true)
+            {
+                if (choice < 1 || choice > menus.Length)
+                {
+                    DisplayErrorMessage(_incorrectInputError);
+                    callerMethod();
+                    return;
+                }
+
+                for (int i = 1; i <= menus.Length; i++)
+                {
+                    menus[i - 1]();
+                }
+            }
+            else
+            {
+                DisplayErrorMessage(_incorrectInputError);
+                callerMethod();
+            }
+        }
     }
 }
