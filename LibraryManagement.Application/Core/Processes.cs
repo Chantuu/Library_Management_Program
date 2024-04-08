@@ -10,5 +10,16 @@
             Console.WriteLine(title);
             Console.ForegroundColor = ConsoleColor.White;
         }
+
+        public static string ShowUserInputPrompt()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("\nYour input: ");
+
+            string result = Console.ReadLine() ?? "";
+
+            Console.ForegroundColor = ConsoleColor.White;
+            return result;
+        }
     }
 }
