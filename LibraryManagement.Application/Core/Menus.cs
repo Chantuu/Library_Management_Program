@@ -18,5 +18,16 @@
 
             string result = Processes.ShowUserInputPrompt();
         }
+
+        public static void AddNewBookMenuTitle()
+        {
+            Processes.DisplayMenuTitle(_addNewBookMenuTitle);
+
+            Console.WriteLine(" Please input the title of the new book");
+
+            Processes.ShowNavigationText(" (Please type cancel to abort the operation):", "cancel");
+
+            string result = Processes.ShowUserInputPrompt();
+        }
     }
 }
