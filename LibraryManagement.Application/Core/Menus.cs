@@ -29,5 +29,19 @@
 
             string result = Processes.ShowUserInputPrompt();
         }
+
+        public static string AddNewBookMenuAuthor(string title)
+        {
+            Processes.DisplayMenuTitle(_addNewBookMenuTitle);
+
+            Console.WriteLine($" Title: {title}");
+            Console.WriteLine(" Please input the author of the new book");
+
+            Processes.ShowNavigationText(" (Please type cancel to abort the operation):", "cancel");
+
+            string result = Processes.ShowUserInputPrompt();
+            
+            return result;
+        }
     }
 }
