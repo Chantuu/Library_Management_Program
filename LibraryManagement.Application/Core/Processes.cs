@@ -14,7 +14,7 @@
         public static string ShowUserInputPrompt()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write("\nYour input: ");
+            Console.Write("\n Your input: ");
 
             string result = Console.ReadLine() ?? "";
 
