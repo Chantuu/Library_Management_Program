@@ -22,6 +22,27 @@
             return result;
         }
 
+        public static void ShowNavigationText(string fullText, string prompt)
+        {
+            int promptTextIndex = fullText.IndexOf(prompt);
+
+            if (promptTextIndex == -1)
+            {
+                throw new ArgumentException(" The provided prompt string was not found in the main text string. Please ensure that prompt string is present in main string.", "promptText");
+            }
+
+            string firstPart = fullText.Substring(0, promptTextIndex);
+            string lastPart = fullText.Substring(promptTextIndex + prompt.Length);
+
+            Console.Write(firstPart);
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write(prompt);
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(lastPart);
+        }
+
         public static void DisplayErrorMessage(string message)
         {
             Console.Clear();
