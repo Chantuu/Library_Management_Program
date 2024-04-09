@@ -43,5 +43,20 @@
             
             return result;
         }
+
+        public static string AddNewBookMenuGenre(string title, string author)
+        {
+            Processes.DisplayMenuTitle(_addNewBookMenuTitle);
+
+            Console.WriteLine($" Title: {title}");
+            Console.WriteLine($" Author: {author}");
+            Console.WriteLine(" Please input the genre of the new book");
+
+            Processes.ShowNavigationText(" (Please type cancel to abort the operation):", "cancel");
+
+            string result = Processes.ShowUserInputPrompt();
+            
+            return result;
+        }
     }
 }
