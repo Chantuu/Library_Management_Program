@@ -5,6 +5,8 @@
         private static string _mainMenuTitle = "\n***************     Main Menu     ***************\n";
         private static string _addNewBookMenuTitle = "\n***************     Add New Book     ***************\n";
 
+        private static string _cancelPrompt = " (Please type cancel to abort the operation):";
+
         public static void MainMenu()
         {
             Processes.DisplayMenuTitle(_mainMenuTitle);
@@ -27,7 +29,7 @@
 
             Console.WriteLine(" Please input the title of the new book");
 
-            Processes.ShowNavigationText(" (Please type cancel to abort the operation):", "cancel");
+            Processes.ShowNavigationText(_cancelPrompt, "cancel");
 
             string result = Processes.ShowUserInputPrompt();
         }
@@ -39,7 +41,7 @@
             Console.WriteLine($" Title: {title}");
             Console.WriteLine(" Please input the author of the new book");
 
-            Processes.ShowNavigationText(" (Please type cancel to abort the operation):", "cancel");
+            Processes.ShowNavigationText(_cancelPrompt, "cancel");
 
             string result = Processes.ShowUserInputPrompt();
             
@@ -54,7 +56,7 @@
             Console.WriteLine($" Author: {author}");
             Console.WriteLine(" Please input the genre of the new book");
 
-            Processes.ShowNavigationText(" (Please type cancel to abort the operation):", "cancel");
+            Processes.ShowNavigationText(_cancelPrompt, "cancel");
 
             string result = Processes.ShowUserInputPrompt();
             
