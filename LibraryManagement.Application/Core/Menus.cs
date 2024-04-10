@@ -58,6 +58,17 @@
             Processes.ShowNavigationText(_cancelPrompt, _cancelCommand);
 
             string result = Processes.ShowUserInputPrompt();
+
+            if (result == _cancelCommand)
+            {
+                Processes.DisplayWarningMessage(_operationCancelledByUserWarning);
+                MainMenu();
+            }
+            else
+            {
+                Console.Clear();
+                AddNewBookMenuGenre(title, result);
+            }
         }
 
         public static void AddNewBookMenuGenre(string title, string author)
