@@ -66,6 +66,7 @@
 
                 for (int i = 1; i <= menus.Length; i++)
                 {
+                    Console.Clear();
                     menus[i - 1]();
                 }
             }
