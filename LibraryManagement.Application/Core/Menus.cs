@@ -34,7 +34,7 @@
             string result = Processes.ShowUserInputPrompt();
         }
 
-        public static string AddNewBookMenuAuthor(string title)
+        public static void AddNewBookMenuAuthor(string title)
         {
             Processes.DisplayMenuTitle(_addNewBookMenuTitle);
 
@@ -44,11 +44,9 @@
             Processes.ShowNavigationText(_cancelPrompt, "cancel");
 
             string result = Processes.ShowUserInputPrompt();
-            
-            return result;
         }
 
-        public static string AddNewBookMenuGenre(string title, string author)
+        public static void AddNewBookMenuGenre(string title, string author)
         {
             Processes.DisplayMenuTitle(_addNewBookMenuTitle);
 
@@ -59,8 +57,6 @@
             Processes.ShowNavigationText(_cancelPrompt, "cancel");
 
             string result = Processes.ShowUserInputPrompt();
-            
-            return result;
         }
     }
 }
