@@ -7,6 +7,8 @@
 
         private static string _cancelPrompt = " (Please type cancel to abort the operation):";
 
+        private static string _cancelCommand = "cancel";
+
         public static void MainMenu()
         {
             Processes.DisplayMenuTitle(_mainMenuTitle);
@@ -29,7 +31,7 @@
 
             Console.WriteLine(" Please input the title of the new book");
 
-            Processes.ShowNavigationText(_cancelPrompt, "cancel");
+            Processes.ShowNavigationText(_cancelPrompt, _cancelCommand);
 
             string result = Processes.ShowUserInputPrompt();
         }
@@ -41,7 +43,7 @@
             Console.WriteLine($" Title: {title}");
             Console.WriteLine(" Please input the author of the new book");
 
-            Processes.ShowNavigationText(_cancelPrompt, "cancel");
+            Processes.ShowNavigationText(_cancelPrompt, _cancelCommand);
 
             string result = Processes.ShowUserInputPrompt();
         }
@@ -54,7 +56,7 @@
             Console.WriteLine($" Author: {author}");
             Console.WriteLine(" Please input the genre of the new book");
 
-            Processes.ShowNavigationText(_cancelPrompt, "cancel");
+            Processes.ShowNavigationText(_cancelPrompt, _cancelCommand);
 
             string result = Processes.ShowUserInputPrompt();
         }
