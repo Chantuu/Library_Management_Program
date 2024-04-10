@@ -83,5 +83,20 @@
 
             string result = Processes.ShowUserInputPrompt();
         }
+
+        public static void AddNewBookMenuDate(string title, string author, string genre)
+        {
+            Processes.DisplayMenuTitle(_addNewBookMenuTitle);
+
+            Console.WriteLine($" Title: {title}");
+            Console.WriteLine($" Author: {author}");
+            Console.WriteLine($" Genre: {genre}");
+            Console.WriteLine(" Please input the date of the new book");
+
+            Processes.ShowNavigationText(" (Date must be in yyyy/mm/dd format)", "yyyy");
+            Processes.ShowNavigationText(_cancelPrompt, _cancelCommand);
+
+            string result = Processes.ShowUserInputPrompt();
+        }
     }
 }
