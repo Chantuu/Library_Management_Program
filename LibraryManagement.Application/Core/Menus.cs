@@ -82,6 +82,17 @@
             Processes.ShowNavigationText(_cancelPrompt, _cancelCommand);
 
             string result = Processes.ShowUserInputPrompt();
+
+            if (result == _cancelCommand)
+            {
+                Processes.DisplayWarningMessage(_operationCancelledByUserWarning);
+                MainMenu();
+            }
+            else
+            {
+                Console.Clear();
+                AddNewBookMenuDate(title, author,result);
+            }
         }
 
         public static void AddNewBookMenuDate(string title, string author, string genre)
@@ -93,7 +104,7 @@
             Console.WriteLine($" Genre: {genre}");
             Console.WriteLine(" Please input the date of the new book");
 
-            Processes.ShowNavigationText(" (Date must be in yyyy/mm/dd format)", "yyyy");
+            Processes.ShowNavigationText(" (Date must be in yyyy/mm/dd format)", "yyyy/mm/dd");
             Processes.ShowNavigationText(_cancelPrompt, _cancelCommand);
 
             string result = Processes.ShowUserInputPrompt();
