@@ -51,6 +51,14 @@
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        public static void DisplayWarningMessage(string message)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"{message}");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
         public static void ChooseNextMenu(string result, Action callerMethod, params Action[] menus)
         {
             int choice;
