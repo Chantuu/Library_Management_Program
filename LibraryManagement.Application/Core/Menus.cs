@@ -17,6 +17,8 @@
             Console.WriteLine(" 5. Exit The Program");
 
             string result = Processes.ShowUserInputPrompt();
+
+            Processes.ChooseNextMenu(result, MainMenu, AddNewBookMenuTitle);
         }
 
         public static void AddNewBookMenuTitle()
