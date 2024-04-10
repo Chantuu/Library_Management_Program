@@ -5,6 +5,8 @@
         private static string _mainMenuTitle = "\n***************     Main Menu     ***************\n";
         private static string _addNewBookMenuTitle = "\n***************     Add New Book     ***************\n";
 
+        private static string _operationCancelledByUserWarning = "This operation has been cancelled by the user";
+
         private static string _cancelPrompt = " (Please type cancel to abort the operation):";
 
         private static string _cancelCommand = "cancel";
@@ -30,10 +32,20 @@
             Processes.DisplayMenuTitle(_addNewBookMenuTitle);
 
             Console.WriteLine(" Please input the title of the new book");
-
             Processes.ShowNavigationText(_cancelPrompt, _cancelCommand);
 
             string result = Processes.ShowUserInputPrompt();
+
+            if (result == _cancelCommand)
+            {
+                Processes.DisplayWarningMessage(_operationCancelledByUserWarning);
+                MainMenu();
+            }
+            else
+            {
+                Console.Clear();
+                AddNewBookMenuAuthor(result);
+            }
         }
 
         public static void AddNewBookMenuAuthor(string title)
